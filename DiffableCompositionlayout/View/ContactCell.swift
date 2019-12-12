@@ -9,6 +9,15 @@
 import UIKit
 
 class ContactCell: UICollectionViewCell {
+    
+    var jsonContact: JSONContact? {
+        didSet {
+            contactLabel.text = jsonContact?.name
+            imageView.loadImageUsingCacheWithUrlString(urlString: jsonContact?.imageUrl ?? "")
+        }
+    }
+    
+    
      lazy var contactLabel: UILabel = {
         let label = UILabel()
         //label.backgroundColor = .magenta
