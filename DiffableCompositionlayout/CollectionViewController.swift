@@ -35,9 +35,9 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController {
     
     private func createData(){
-        for i in 0..<10 {
-            contacts.append(Contact(name: "Contact \(i)", image: ""))
-        }
+        for i in 1..<17 {
+            contacts.append(Contact(name: "Animal\(i)", image: "Animal\(i)"))
+       }
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -52,7 +52,7 @@ extension CollectionViewController {
         
         //2
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         
         //3
         let section = NSCollectionLayoutSection(group: group)
@@ -80,7 +80,8 @@ extension CollectionViewController {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, contact) -> ContactCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! ContactCell
             cell.contactLabel.text = contact.name
-            cell.backgroundColor = .cyan
+            cell.imageView.image = UIImage(named: contact.image)
+           // cell.backgroundColor = .cyan
             return cell
         })
         
