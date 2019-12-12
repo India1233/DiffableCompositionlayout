@@ -52,7 +52,7 @@ extension CollectionViewController {
         
         //2
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         //3
         let section = NSCollectionLayoutSection(group: group)
@@ -70,7 +70,7 @@ extension CollectionViewController {
         collectionView.delegate = self
         //3
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor  = .systemBackground
+        collectionView.backgroundColor  = .black
         //4
         collectionView.register(ContactCell.self, forCellWithReuseIdentifier: cellId)
         view.addSubview(collectionView)
