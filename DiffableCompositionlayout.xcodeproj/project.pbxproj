@@ -88,12 +88,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A25624423A276AE00C7B036 /* New Group */ = {
+		9A25624423A276AE00C7B036 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9A25624523A276BE00C7B036 /* Extensions.swift */,
 			);
-			path = "New Group";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9A4D2CFD23A20EB9004F3918 = {
@@ -124,7 +124,7 @@
 				9A4D2D4323A26AED004F3918 /* View */,
 				9A4D2D4223A26AE2004F3918 /* Model */,
 				9A4D2D4423A26AFC004F3918 /* NetworkService */,
-				9A25624423A276AE00C7B036 /* New Group */,
+				9A25624423A276AE00C7B036 /* Extensions */,
 				9A4D2D4623A26B62004F3918 /* Helping Class */,
 				9A4D2D0F23A20EB9004F3918 /* Main.storyboard */,
 				9A4D2D1423A20EBA004F3918 /* LaunchScreen.storyboard */,
