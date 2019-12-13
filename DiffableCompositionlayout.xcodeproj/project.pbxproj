@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A25624623A276BE00C7B036 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25624523A276BE00C7B036 /* Extensions.swift */; };
+		9A25624823A36AF700C7B036 /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25624723A36AF700C7B036 /* UIViewEx.swift */; };
 		9A4D2D0A23A20EB9004F3918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D2D0923A20EB9004F3918 /* AppDelegate.swift */; };
 		9A4D2D0C23A20EB9004F3918 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D2D0B23A20EB9004F3918 /* SceneDelegate.swift */; };
 		9A4D2D0E23A20EB9004F3918 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D2D0D23A20EB9004F3918 /* CollectionViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		9A25624523A276BE00C7B036 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9A25624723A36AF700C7B036 /* UIViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
 		9A4D2D0623A20EB9004F3918 /* DiffableCompositionlayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiffableCompositionlayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4D2D0923A20EB9004F3918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4D2D0B23A20EB9004F3918 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		9A25624423A276AE00C7B036 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9A25624723A36AF700C7B036 /* UIViewEx.swift */,
 				9A25624523A276BE00C7B036 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4D2D3C23A220EE004F3918 /* ContactCell.swift in Sources */,
+				9A25624823A36AF700C7B036 /* UIViewEx.swift in Sources */,
 				9A25624623A276BE00C7B036 /* Extensions.swift in Sources */,
 				9A4D2D3A23A2187A004F3918 /* Contact.swift in Sources */,
 				9A4D2D0E23A20EB9004F3918 /* CollectionViewController.swift in Sources */,

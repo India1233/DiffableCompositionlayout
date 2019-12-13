@@ -20,40 +20,70 @@ class ContactCell: UICollectionViewCell {
     
      lazy var contactLabel: UILabel = {
         let label = UILabel()
-        //label.backgroundColor = .magenta
-        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Contact Name", size: 22)
+        label.textColor = UIColor.init(white: 0.3, alpha: 0.4)
         label.contentMode = .center
        return label
     }()
     
     lazy var imageView:UIImageView = {
-     let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-      //  imageView.backgroundColor = .red
+     let profileImg  = UIImage(systemName: "person.crop.circle")
+     let renderedImg = profileImg?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+     let imageView = UIImageView(image: renderedImg)
+     imageView.translatesAutoresizingMaskIntoConstraints = false
+     imageView.layer.cornerRadius = 25
+     imageView.layer.masksToBounds = true
         return imageView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.addSubview(imageView)
-        self.setuplayoutImageView()
-        
-        self.addSubview(contactLabel)
-        self.setupLayoutConstraintsLabel()
+        setupCardCellShadow()
+       setupCell()
 
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        
-        self.addSubview(imageView)
-        self.setuplayoutImageView()
-        
-        self.addSubview(contactLabel)
-        self.setupLayoutConstraintsLabel()
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    private func setupCell() {
+    
+        self.backgroundView?.addSubview(imageView)
+        self.backgroundView?.addSubview(contactLabel)
+
+        NSLayoutConstraint.activate([
+                    imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                    imageView.widthAnchor.constraint(equalToConstant: 50),
+                    imageView.heightAnchor.constraint(equalToConstant: 50),
+
+                    contactLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    contactLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16),
+                    contactLabel.widthAnchor.constraint(equalToConstant: 200),
+                    contactLabel.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+    }
+    
+    func setupCardCellShadow() {
+         backgroundView = UIView()
+         addSubview(backgroundView!)
+         backgroundView?.fillSuperview()
+         backgroundView?.backgroundColor     = .white
+         backgroundView?.layer.cornerRadius  = 26
+         backgroundView?.layer.shadowOpacity = 0.1
+         backgroundView?.layer.shadowOffset  = .init(width: 4, height: 10)
+         backgroundView?.layer.shadowRadius  = 10
+
+         layer.borderColor  = UIColor.gray.cgColor
+         layer.borderWidth  = 0.2
+         layer.cornerRadius = 26
+         self.layoutIfNeeded()
+     }
+    
+    
     
     private func setuplayoutImageView() {
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
